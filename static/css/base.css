@@ -5,8 +5,9 @@ body {
     background: url('/media/homepage_background_cropped.jpg') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
-    color: #555;
+    color: black;
     font-family: 'Lato';
+    font-weight: bolder;
 }
 /* from Bulma */
 .icon {
@@ -29,6 +30,7 @@ body {
     background: black;
     color: white;
     min-width: 260px;
+    font-weight: bolder;
 }
 
 .btn-black {
@@ -48,6 +50,7 @@ body {
 
 .text-black {
     color: #000 !important;
+    font-weight: bolder !important;
 }
 
 .border-black {
