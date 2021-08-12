@@ -3,7 +3,7 @@ from .models import Product, Category
 
 # Register your models here.
 
-
+# re-arranging the order of your products
 class ProductAdmin(admin.ModelAdmin):
     list_display = (
         'sku',
@@ -22,6 +22,6 @@ class CategoryAdmin(admin.ModelAdmin):
         'name',
     )
 
-
+# registering models
 admin.site.register(Product, ProductAdmin)
 admin.site.register(Category, CategoryAdmin)
