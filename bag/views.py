@@ -85,26 +85,23 @@ def adjust_bag(request, item_id):
 
 
 def remove_from_bag(request, item_id):
-    """ Remove item from shopping bag """
+    """Remove the item from the shopping bag"""
+
     try:
         size = None
         if 'product_size' in request.POST:
             size = request.POST['product_size']
-        # geting the bag variable if it exists -
-        # in the session or create if it doesnt
         bag = request.session.get('bag', {})
 
         if size:
             del bag[item_id]['items_by_size'][size]
             if not bag[item_id]['items_by_size']:
                 bag.pop(item_id)
-            else:
-                del bag[item_id]['items_by_size'][size]
         else:
             bag.pop(item_id)
 
-        # overwrite the variable in the session with the updated version
         request.session['bag'] = bag
         return HttpResponse(status=200)
+
     except Exception as e:
         return HttpResponse(status=500)
