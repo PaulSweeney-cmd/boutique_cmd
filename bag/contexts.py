@@ -6,7 +6,6 @@ from products.models import Product
 
 # a function to make a dictionary available to all templates
 def bag_contents(request):
-
     bag_items = []
     total = 0
     product_count = 0
@@ -38,6 +37,8 @@ def bag_contents(request):
                     'size': size,
                 })
 
+    """ FREE_DELIVERY & STANDARD_DELIVERY_PERCENTAGE taken from settings.py-
+    at project level """
     if total < settings.FREE_DELIVERY_THRESHOLD:
         delivery = total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE/100)
         free_delivery_delta = settings.FREE_DELIVERY_THRESHOLD - total
