@@ -1,4 +1,4 @@
-import uuid  # to generate tracking numbers
+import uuid  # generate tracking numbers
 
 from django.db import models
 from django.db.models import Sum
