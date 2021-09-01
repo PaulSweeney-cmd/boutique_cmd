@@ -42,7 +42,7 @@ def add_to_bag(request, item_id):
                 messages.success(request, f'Added size {size.upper()} {product.name} to your bag!')
         else:
             bag[item_id] = {'items_by_size': {size: quantity}}
-            messages.success(request, f'Added size {size.upper()} {product.name} to your bag!')
+            messages.success(request, f'Added size {size.upper()}{product.name} to your bag!')
     else:
         # update the quantity if it already exsists
         if item_id in list(bag.keys()):
@@ -79,7 +79,7 @@ def adjust_bag(request, item_id):
             # find the size and either set its quantity-
             # to update number or remove if zero
             bag[item_id]['items_by_size'][size] = quantity
-            messages.success(request, f'Updated size {size.upper()} {product.name} to {bag[item_id]["items_by_size"][size]}')
+            messages.success(request, f'Updated size {size.upper()}{product.name} to {bag[item_id]["items_by_size"][size]}')
         else:
             del bag[item_id]['items_by_size'][size]
             if not bag[item_id]['items_by_size']:
