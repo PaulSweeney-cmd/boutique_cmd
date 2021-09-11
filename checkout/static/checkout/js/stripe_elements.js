@@ -1,17 +1,15 @@
 /*
     Core logic/payment flow for this comes from here:
     https://stripe.com/docs/payments/accept-a-payment
-
     CSS from here: 
     https://stripe.com/docs/stripe-js
 */
 
 var stripe_public_key = $('#id_stripe_public_key').text().slice(1, -1);
 var client_secret = $('#id_client_secret').text().slice(1, -1);
-
-/* setup stripe by creating a variable using the stripe public key */
+// set-up stripe by creating a variable using the stripe public key
 var stripe = Stripe(stripe_public_key);
-/* use it to create a instance of stripe elements */
+// use stripe to create an instance of elements
 var elements = stripe.elements();
 var style = {
     base: {
@@ -28,10 +26,13 @@ var style = {
         iconColor: '#dc3545'
     }
 };
-/* use that to create a card element */
+// use elements to create a card element
 var card = elements.create('card', {style: style});
 
-/* and then mount the card element to a div */
+// mount the card element to the div
 card.mount('#card-element');
+
+
+
 
 
