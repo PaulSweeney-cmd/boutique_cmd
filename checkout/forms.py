@@ -41,6 +41,7 @@ class OrderForm(forms.ModelForm):
                 placeholder = placeholders[field]
             # setting the placeholders to their values in the dictionary
             self.fields[field].widget.attrs['placeholder'] = placeholder
+            # Stripe
             self.fields[field].widget.attrs['class'] = 'stripe-style-input'
             # removing the form field labels
             self.fields[field].label = False

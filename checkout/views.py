@@ -16,9 +16,13 @@ def checkout(request):
     order_form = OrderForm()
     # create the template
     template = 'checkout/checkout.html'
+
     # context containing order form
     context = {
         'order_form': order_form,
+        # Stripe
+        'stripe_public_key': 'pk_test_51JYUgnCCIKFmYvsacuVq6enUbna18SqsLGWNoZdP5k7S9mZ04Uxrq09mJu9BxHNp2Fz8q9i6Hjc5RWGpI1gmMOQN00Viz82h9P',
+        'client_secret': 'test client secret',
     }
     # and finally render it all out
     return render(request, template, context)
