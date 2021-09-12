@@ -1,6 +1,7 @@
 /*
     Core logic/payment flow for this comes from here:
     https://stripe.com/docs/payments/accept-a-payment
+
     CSS from here: 
     https://stripe.com/docs/stripe-js
 */
@@ -59,7 +60,7 @@ form.addEventListener('submit', function(ev) {
     card.update({ 'disabled': true});
     $('#submit-button').attr('disabled', true);
     /* call the confirm card payment method & 
-    provide the card to styripe then execute the function */
+    provide the card to stripe then execute the function */
     stripe.confirmCardPayment(clientSecret, {
         payment_method: {
             card: card,
