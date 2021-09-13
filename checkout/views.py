@@ -62,7 +62,9 @@ def checkout(request):
                     order.delete()
                     return redirect(reverse('view_bag'))
             request.session['save-info'] = 'save-info' in request.POST
-            return redirect(reverse('checkout_success', args=[order.order_number]))
+            return redirect(reverse(
+                'checkout_success', args=[order.order_number])
+                )
         else:
             messages.error(request('There was an error with your form. \
             Please doube check your information.'))
@@ -73,7 +75,9 @@ def checkout(request):
         bag = request.session.get('bag', {})
         # if nothing is in the bag, produce error message
         if not bag:
-            messages.error(request, "Sorry, there's nothing in your shopping bag at the moment")
+            messages.error(
+                request, "Sorry, there's nothing in your shopping bag at the moment"
+                )
             return redirect(reverse('products'))
         # Stripe
         current_bag = bag_contents(request)
