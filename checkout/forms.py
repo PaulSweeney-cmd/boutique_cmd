@@ -22,25 +22,25 @@ class OrderForm(forms.ModelForm):
             'full_name': 'Full Name',
             'email': 'Email Address',
             'phone_number': 'Phone Number',
-            'country': 'Country',
             'postcode': 'Postal Code',
             'town_or_city': 'Town or City',
             'street_address1': 'Street Address 1',
             'street_address2': 'Street Address 2',
-            'county': 'County',
+            'county': 'County, State or Locality',
         }
         # setting the autofocus attribute on the full name field to True so the cursor will-
         # start in the full name field when the page loads
         self.fields['full_name'].widget.attrs['autofocus'] = True
         # iterating through the form felds
         for field in self.fields:
-            if self.fields[field].required:
-                # adding a * to the placeholder if it is a required field
-                placeholder = f'{placeholders[field]} *'
-            else:
-                placeholder = placeholders[field]
-            # setting the placeholders to their values in the dictionary
-            self.fields[field].widget.attrs['placeholder'] = placeholder
+            if field != 'country':
+                if self.fields[field].required:
+                    # adding a * to the placeholder if it is a required field
+                    placeholder = f'{placeholders[field]} *'
+                else:
+                    placeholder = placeholders[field]
+                # setting the placeholders to their values in the dictionary
+                self.fields[field].widget.attrs['placeholder'] = placeholder
             # Stripe
             self.fields[field].widget.attrs['class'] = 'stripe-style-input'
             # removing the form field labels
