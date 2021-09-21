@@ -4,8 +4,12 @@
 
 #profile-update-form input::placeholder {
     color: #aab7c4;
+    font-weight: bolder;
 }
 
+.text-muted {
+    font-weight: bolder !important;
+}
 /* Country Field */
 #id_default_country,
 #id_default_country option:not(:first-child) {

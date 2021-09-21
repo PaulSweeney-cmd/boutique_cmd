@@ -37,6 +37,7 @@ body {
 .btn-black {
     background: black;
     color: white;
+    font-weight: bolder !important;
 }
 
 .btn-outline-black {
@@ -64,6 +65,7 @@ body {
 
 .text-black {
     color: #000 !important;
+    font-weight: bolder;
 }
 
 .border-black {
