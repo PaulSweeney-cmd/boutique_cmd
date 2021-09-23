@@ -1,0 +1,25 @@
+Greetings  {{ order.full_name }}
+
+Thanks for shopping at Boutique Ado! As soon as we heard that ping on our system we knew something magical had happened, it's safe to say that Kyle did a back flip off his desk and Katie schreeched with excitement.
+It's people like you that we care about because we know that you care about quality products so it's high fives all round!
+
+This is a confirmation of your order. Your order information is below:
+
+Order Number: {{ order.order_number }}
+Order Date: {{ order.date }}
+
+Order Total: {{ order.order_total }}
+Deliver: {{ order.delivery_cost }}
+Grand Total: {{ order.grand_total }}
+
+Your order will be shipped to {{ order.street_address1 }} in {{ order.town_or_city }}, {{ order.country }}.
+
+We've got your phone number on our system as {{ order.phone_number }}.
+
+If you have any questions, feel free to contact us at {{ contact_email }}.
+
+Once again thank you for your custom and we hope you enjoy your purchase!
+
+See you soon.
+
+Team Boutique Ado.
