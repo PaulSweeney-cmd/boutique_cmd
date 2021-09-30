@@ -95,6 +95,9 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="card h-100 border-0">
+                            <img class="card-img-top img-fluid" src="BOUTIQUE_CMD/picture/pexels-richard-verbeek-572861 (1).jpg">
+                        </div>
                         {% if forloop.counter|divisibleby:1 %}
                             <div class="col-12 d-sm-none mb-5">
                                 <hr>
@@ -126,9 +129,7 @@
         </a>
     </div>
 {% endblock %}
-<div class="card h-100 border-0">
-    <img class="card-img-top img-fluid" src="BOUTIQUE_CMD/picture/pexels-richard-verbeek-572861 (1).jpg">
-</div>
+
 
 {% block postloadjs %}
     {{ block.super }}
